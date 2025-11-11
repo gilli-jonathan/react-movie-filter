@@ -15,6 +15,20 @@ function App() {
 
   return (
     <>
+      <h1>CINEFORUM AZIENDALE</h1>
+      <hr />
+      <h2>Titoli dei film</h2>
+      <ul>
+        {movies.map((obj) => (
+
+          <li key={obj.title}>
+            <h3>{obj.title}</h3>
+          </li>
+
+        ))}
+      </ul>
+
+
 
     </>
   )
