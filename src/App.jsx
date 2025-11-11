@@ -14,7 +14,7 @@ function App() {
 
   const [movieSt, setMovieSt] = useState(movies)
   const [movieFilter, setMovieFilter] = useState(movies)
-  const [gene, setGene] = useState('')
+  const [gene, setGene] = useState('Tutti')
 
   const generi = ["Tutti"]
 
@@ -26,7 +26,11 @@ function App() {
 
 
   useEffect(() => {
-    setMovieFilter(movieSt.filter((obj) => obj.genre === gene))
+    if (gene !== "Tutti") {
+      setMovieFilter(movieSt.filter((obj) => obj.genre === gene))
+    } else {
+      setMovieFilter(movieSt)
+    }
 
   }, [gene])
 
