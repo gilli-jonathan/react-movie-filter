@@ -28,6 +28,18 @@ function App() {
         ))}
       </ul>
 
+      <select name="" id="">
+        {movies.map((obj, index, arr) => (
+
+          <option key={index} value=""> {obj.genre !== arr}</option>
+
+
+
+        ))}
+
+
+      </select>
+
 
 
     </>
