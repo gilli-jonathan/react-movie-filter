@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { use } from "react";
+import { useState, useEffect } from "react"
 
 function App() {
 
@@ -12,8 +13,10 @@ function App() {
   ]
 
   const [movieSt, setMovieSt] = useState(movies)
+  const [movieFilter, setMovieFilter] = useState(movies)
+  const [gene, setGene] = useState('')
 
-  const generi = ["tutti"]
+  const generi = ["Tutti"]
 
   movies.forEach((obj) => {
     if (!generi.includes(obj.genre)) {
@@ -21,7 +24,12 @@ function App() {
     }
   });
 
-  console.log(generi);
+
+  useEffect(() => {
+
+
+  }, [])
+
 
 
   return (
@@ -39,9 +47,11 @@ function App() {
         ))}
       </ul>
 
-      <select name="" id="" >
+      <hr />
+      <h3>scegli il genere di film che vuoi vedere</h3>
+      <select name="" id="" value={gene} onChange={(e) => setGene(e.target.value)}>
         {generi.map((item, index) => (
-          <option key={index} value="">{item}</option>
+          <option key={index} value={item}>{item}</option>
         ))}
       </select>
 
