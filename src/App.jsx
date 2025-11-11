@@ -26,9 +26,9 @@ function App() {
 
 
   useEffect(() => {
+    setMovieFilter(movieSt.filter((obj) => obj.genre === gene))
 
-
-  }, [])
+  }, [gene])
 
 
 
@@ -38,7 +38,7 @@ function App() {
       <hr />
       <h2>Titoli dei film</h2>
       <ul>
-        {movieSt.map((obj) => (
+        {movieFilter.map((obj) => (
 
           <li key={obj.title}>
             <h3>{obj.title}</h3>
