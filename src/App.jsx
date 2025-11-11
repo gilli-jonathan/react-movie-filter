@@ -1,4 +1,4 @@
-
+import { useState } from "react"
 
 function App() {
 
@@ -11,6 +11,17 @@ function App() {
     { title: 'Pulp Fiction', genre: 'Thriller' },
   ]
 
+  const [movieSt, setMovieSt] = useState(movies)
+
+  const generi = ["tutti"]
+
+  movies.forEach((obj) => {
+    if (!generi.includes(obj.genre)) {
+      generi.push(obj.genre);
+    }
+  });
+
+  console.log(generi);
 
 
   return (
@@ -28,16 +39,10 @@ function App() {
         ))}
       </ul>
 
-      <select name="" id="">
-        {movies.map((obj, index, arr) => (
-
-          <option key={index} value=""> {obj.genre !== arr}</option>
-
-
-
+      <select name="" id="" >
+        {generi.map((item, index) => (
+          <option key={index} value="">{item}</option>
         ))}
-
-
       </select>
 
 
