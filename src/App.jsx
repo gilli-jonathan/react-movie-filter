@@ -18,7 +18,7 @@ function App() {
 
   const generi = ["Tutti"]
 
-  movies.forEach((obj) => {
+  movieSt.forEach((obj) => {
     if (!generi.includes(obj.genre)) {
       generi.push(obj.genre);
     }
@@ -38,7 +38,7 @@ function App() {
       <hr />
       <h2>Titoli dei film</h2>
       <ul>
-        {movies.map((obj) => (
+        {movieSt.map((obj) => (
 
           <li key={obj.title}>
             <h3>{obj.title}</h3>
